@@ -30,23 +30,16 @@
         <img src="./images/area_of_trinagle.png" alt="triangle image" />
       </div>
       <div class="page-content-php">
-        <form action="answer.php" method="POST">
-          <br />
-          <div class="mdl-textfield mdl-js-textfield">
-            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" name="base-of-triangle">
-            <label class="mdl-textfield__label" for="base-of-triangle">Enter Base ... (Cm)</label>
-            <span class="mdl-textfield__error">Input is not a number!</span>
-          </div>
-          <br />
-          <br />
-          <div class="mdl-textfield mdl-js-textfield">
-            <input class="mdl-textfield__input" type=" text" pattern="-?[0-9]*(\.[0-9]+)?" name="hight-of-triangle">
-            <label class="mdl-textfield__label" for="hight-of-triangle">Enter Hight ... (Cm)</label>
-            <span class="mdl-textfield__error">Input is not a number!</span>
-          </div>
-          <br />
-          <input class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">
-        </form>
+        <div id="triangle-area">
+          <?php
+          $triangleBase = $_POST["base-of-triangle"];
+          $triangleHight = $_POST["hight-of-triangle"];
+
+          $triangleArea = ($triangleHight * $triangleBase) / 2;
+
+          echo "The area of the triangle is: " . $triangleArea . " Cm²";
+          ?>
+        </div>
       </div>
     </main>
   </div>
